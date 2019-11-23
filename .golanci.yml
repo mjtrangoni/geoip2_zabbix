@@ -1,0 +1,88 @@
+linters-settings:
+  govet:
+    check-shadowing: true
+  golint:
+    min-confidence: 0
+  gocyclo:
+    min-complexity: 40
+  gocognit:
+    min-complexity: 60
+  maligned:
+    suggest-new: true
+  dupl:
+    threshold: 100
+  goconst:
+    min-len: 2
+    min-occurrences: 2
+  depguard:
+    list-type: blacklist
+    packages:
+      # logging is allowed only by logutils.Log, logrus
+      # is allowed to use only in logutils package
+      - github.com/sirupsen/logrus
+  misspell:
+    locale: US
+  lll:
+    line-length: 140
+  goimports:
+    local-prefixes: github.com/golangci/golangci-lint
+  gocritic:
+    enabled-tags:
+      - performance
+      - style
+      - experimental
+    disabled-checks:
+      - wrapperFunc
+  funlen:
+    lines: 120
+    statements: 50
+  wsl:
+    # If true append is only allowed to be cuddled if appending value is
+    # matching variables, fields or types on line above. Default is true.
+    strict-append: false
+    # Allow calls and assignments to be cuddled as long as the lines have any
+    # matching variables, fields or types. Default is true.
+    allow-assign-and-call: false
+    # Allow multiline assignments to be cuddled. Default is true.
+    allow-multiline-assign: false
+    # Allow case blocks to end with a whitespace.
+    allow-case-traling-whitespace: false
+    # Allow declarations (var) to be cuddled.
+    allow-cuddle-declarations: false
+
+linters:
+  enable-all: true
+  disable:
+    - gochecknoinits
+    - gochecknoglobals
+    - goimports
+    - unparam
+
+run:
+  skip-dirs:
+    - test/testdata_etc
+
+issues:
+  exclude-rules:
+    - text: "type `typedDesc` is unused"
+      linters:
+        - unused
+    - text: "rewrite if-else to switch statement"
+      linters:
+        - gocritic
+    - text: "consider giving a name to these results"
+      linters:
+        - gocritic
+    - text: "Subprocess launched with function call as argument or cmd arguments"
+      linters:
+        - gosec
+    - text: "if statements should only be cuddled with assignments"
+      linters:
+        - wsl
+
+# golangci.com configuration
+# https://github.com/golangci/golangci/wiki/Configuration
+service:
+  golangci-lint-version: 1.15.x # use the fixed version to not introduce new linters unexpectedly
+  prepare:
+    - echo "here I can run custom commands, but no preparation needed for this repo"
