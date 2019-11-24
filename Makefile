@@ -47,7 +47,7 @@ golangci: $(GOLINTER)
 .PHONY: build
 build: common-deps
 	@echo ">> building binaries"
-	@$(GO) build -buildmode=pie -tags netgo -ldflags '-s -extldflags "-static"' -o $(TARGET) $(pkgs)
+	@$(GO) build -tags netgo -ldflags '-s -extldflags "-static"' -o $(TARGET) $(pkgs)
 
 .PHONY: crossbuild
 crossbuild: common-deps
