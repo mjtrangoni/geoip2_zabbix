@@ -1,7 +1,7 @@
-# GeoIP2 Zabbix [![Build Status](https://travis-ci.org/mjtrangoni/geoip2_zabbix.svg)][travis]
+# GeoIP2 Zabbix [![Build Status](https://travis-ci.org/mjtrangoni/geoip2_zabbix.svg?style=for-the-badge)][travis]
 
-[![GoDoc](https://godoc.org/github.com/mjtrangoni/geoip2_zabbix?status.svg)](https://godoc.org/github.com/mjtrangoni/geoip2_zabbix)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/mjtrangoni/geoip2_zabbix/master/LICENSE)
+[![GoDoc](https://godoc.org/github.com/mjtrangoni/geoip2_zabbix?status.svg?style=for-the-badge)](https://godoc.org/github.com/mjtrangoni/geoip2_zabbix)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge)](https://raw.githubusercontent.com/mjtrangoni/geoip2_zabbix/master/LICENSE)
 
 Monitoring script for getting the actual host location from
 [GeoIP2-City](https://www.maxmind.com/en/geoip2-city) and expose it to [Zabbix](https://www.zabbix.com/).
