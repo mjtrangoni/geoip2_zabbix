@@ -2,9 +2,8 @@
 
 [![GoDoc](https://godoc.org/github.com/mjtrangoni/geoip2_zabbix?status.svg)](https://godoc.org/github.com/mjtrangoni/geoip2_zabbix)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/mjtrangoni/geoip2_zabbix/master/LICENSE)
-[![StyleCI](https://github.styleci.io/repos/107779392/shield?branch=master)](https://github.styleci.io/repos/107779392)
 
-Monitoring script for getting the actual host location from 
+Monitoring script for getting the actual host location from
 [GeoIP2-City](https://www.maxmind.com/en/geoip2-city) and expose it to [Zabbix](https://www.zabbix.com/).
 
 ## Getting
