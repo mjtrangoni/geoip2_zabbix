@@ -8,3 +8,6 @@ go:
 
 script:
   - make
+  - curl -O https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz
+  - tar -xzf GeoLite2-City.tar.gz --strip-components 1 --wildcards --no-anchored 'GeoLite2-City.mmdb'
+  - ./geoip2_zabbix --path.geoipdb="GeoLite2-City.mmdb" | jq
