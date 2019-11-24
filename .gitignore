@@ -3,6 +3,7 @@
 
 # Test binary, build with `go test -c`
 *.test
+*.tar.gz
 
 # Exclude vendoring files
 vendor/*
@@ -11,4 +12,5 @@ vendor/*
 *.mmdb
 
 # Binaries
-zabbix_geoip.exe
+geoip2_zabbix.exe
+geoip2_zabbix
