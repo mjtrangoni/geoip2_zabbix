@@ -52,7 +52,7 @@ build: common-deps
 .PHONY: crossbuild
 crossbuild: common-deps
 	@echo ">> crossbuilding binaries for windows"
-	@GOOS=windows GOARCH=amd64 $(GO) build -tags netgo -ldflags '-s -H=windowsgui -extldflags "-static"' -o $(TARGET).exe $(pkgs)
+	@GOOS=windows GOARCH=amd64 $(GO) build -tags netgo -ldflags '-s -extldflags "-static"' -o $(TARGET).exe $(pkgs)
 
 .PHONY: clean
 clean:
