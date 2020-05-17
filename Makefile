@@ -68,8 +68,9 @@ common-deps:
 .PHONY: download-geolite2-city
 download-geolite2-city: geoipupdate
 	@echo ">> download GeoLite2-City DB"
-	@envsubst < GeoIP.conf
-	@geoipupdate --config-file ./GeoIP.conf -d .
+	@envsubst < GeoIP.conf > GeoIP.conf.data
+	@geoipupdate --config-file ./GeoIP.conf.data -d .
+	@rm -f GeoIP.conf.data
 
 .PHONY: golangci-lint lint
 $(GOPATH)/bin/golangci-lint lint:
