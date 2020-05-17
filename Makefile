@@ -65,8 +65,19 @@ common-deps:
 	@echo ">> ensure vendoring"
 	@$(GO) mod download
 
+.PHONY: download-geolite2-city
+download-geolite2-city: geoipupdate
+	@echo ">> download GeoLite2-City DB"
+	@geoipupdate --config-file ./GeoIP.conf -d .
+
 .PHONY: golangci-lint lint
 $(GOPATH)/bin/golangci-lint lint:
 	@GOOS=$(shell uname -s | tr A-Z a-z) \
 		GOARCH=$(subst x86_64,amd64,$(patsubst i%86,386,$(shell uname -m))) \
-		$(GO) get -u github.com/golangci/golangci-lint/cmd/golangci-lint@v1.27.0
+		$(GO) get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.27.0
+
+.PHONY: geoipupdate
+$(GOPATH)/bin/geoipupdate geoipupdate:
+	@GOOS=$(shell uname -s | tr A-Z a-z) \
+		GOARCH=$(subst x86_64,amd64,$(patsubst i%86,386,$(shell uname -m))) \
+		$(GO) get github.com/maxmind/geoipupdate/v4/cmd/geoipupdate
