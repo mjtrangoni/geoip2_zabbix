@@ -10,4 +10,4 @@ go:
 script:
   - make
   - make download-geolite2-city
-  - ./geoip2_zabbix --path.geoipdb="GeoLite2-City.mmdb" | jq
+  - ./geoip2_zabbix --path.geoipdb=./GeoLite2-City.mmdb | jq
