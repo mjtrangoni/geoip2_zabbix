@@ -24,8 +24,6 @@ func parseCityRecord(cityStruct *geoip2.City, outLang *string) (resp GeoIPCityJS
 	resp.Location.MetroCode = cityStruct.Location.MetroCode
 	resp.Location.TimeZone = cityStruct.Location.TimeZone
 	resp.PostalCode = cityStruct.Postal.Code
-	resp.Subdivisions.IsoCode = cityStruct.Subdivisions[0].IsoCode
-	resp.Subdivisions.Name = cityStruct.Subdivisions[0].Names[*outLang]
 	resp.Traits.IsAnonymousProxy = cityStruct.Traits.IsAnonymousProxy
 	resp.Traits.IsSatelliteProvider = cityStruct.Traits.IsSatelliteProvider
 

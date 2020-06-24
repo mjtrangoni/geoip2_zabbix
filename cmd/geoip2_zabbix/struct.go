@@ -20,12 +20,8 @@ type GeoIPCityJSON struct {
 		MetroCode      uint    `json:"metro_code"`
 		TimeZone       string  `json:"time_zone"`
 	} `json:"location"`
-	PostalCode   string `json:"postal_code"`
-	Subdivisions struct {
-		IsoCode string `json:"iso_code"`
-		Name    string `json:"name"`
-	} `json:"subdivisions"`
-	Traits struct {
+	PostalCode string `json:"postal_code"`
+	Traits     struct {
 		IsAnonymousProxy    bool `json:"is_anonymous_proxy"`
 		IsSatelliteProvider bool `json:"is_satellite_provider"`
 	} `json:"traits"`
