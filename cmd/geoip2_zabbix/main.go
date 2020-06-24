@@ -32,7 +32,7 @@ func parseCityRecord(cityStruct *geoip2.City, outLang *string) (resp GeoIPCityJS
 
 func main() {
 	var (
-		geoIP2Path = kingpin.Flag("path.geoipdb", "GeoIP DB file path.").Default("GeoLite2-City.mmdb").String()
+		geoIP2Path = kingpin.Flag("path.geoipdb", "GeoIP DB file path.").Required().String()
 		hostFQDN   = kingpin.Flag("host.fqdn", "Host FQDN for external IP.").Default("").String()
 		outLang    = kingpin.Flag("out.lang", "Output language. [de,en,es,fr,ja,pt-BR,ru,zh-CN]").Default("en").String()
 		verbose    = kingpin.Flag("verbose", "Verbose mode.").Short('v').Bool()
