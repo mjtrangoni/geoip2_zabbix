@@ -8,7 +8,6 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/glendc/go-external-ip v0.0.0-20170425150139-139229dcdddd
 	github.com/kr/pretty v0.2.0 // indirect
-	github.com/maxmind/geoipupdate/v4 v4.3.0 // indirect
 	github.com/oschwald/geoip2-golang v1.3.0
 	github.com/oschwald/maxminddb-golang v1.5.0 // indirect
 	github.com/stretchr/testify v1.5.1 // indirect

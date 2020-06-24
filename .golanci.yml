@@ -56,7 +56,6 @@ linters:
     - gochecknoinits
     - gochecknoglobals
     - goimports
-    - unparam
 
 run:
   skip-dirs:
