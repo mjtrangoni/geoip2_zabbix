@@ -1,4 +1,4 @@
-# GeoIP2 Zabbix [![Travis (.org)](https://img.shields.io/travis/mjtrangoni/geoip2_zabbix/master.svg?style=for-the-badge)](https://travis-ci.org/mjtrangoni/geoip2_zabbix.svg?branch=master)
+# GeoIP2 Zabbix [![Build Status](https://travis-ci.org/mjtrangoni/geoip2_zabbix.svg?branch=master)](https://travis-ci.org/mjtrangoni/geoip2_zabbix)
 
 [![GoDoc](https://godoc.org/github.com/mjtrangoni/geoip2_zabbix?status.svg?style=for-the-badge)](https://godoc.org/github.com/mjtrangoni/geoip2_zabbix)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge)](https://raw.githubusercontent.com/mjtrangoni/geoip2_zabbix/master/LICENSE)
