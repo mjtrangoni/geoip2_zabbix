@@ -29,7 +29,7 @@ This program works with the commercial and the lite version of the
 
 # Templates
 
-WIP
+For Zabbix 4.2 [here](https://github.com/mjtrangoni/geoip2_zabbix/blob/master/templates/zbx_template_geoip2zabbix_zabbix42.xml)
 
 ## Running
 
@@ -40,14 +40,28 @@ $ ./geoip2_zabbix <flags>
 
 ### Zabbix UserParameters
 
-A [UserParameters](https://www.zabbix.com/documentation/current/manual/config/items/userparameters) example will be available soon.
+Using zabbix [UserParameters](https://www.zabbix.com/documentation/current/manual/config/items/userparameters),
+you can call **geoip2_zabbix** from linux or windows,
 
-### Zabbix loadable module
+#### Linux
 
-Once the golang version of `zabbix_agent`, called `zabbix_agent2` will be released,
-I will be adding this capability.
+You can build **geoip2_zabbix** for linux running simply `make`, and then add
+this UserParameter to your `zabbix-agent`.
 
-## Dashboard
+```
+UserParameter=geoip2.zabbix,/pathtobinary/geoip2_zabbix --path.geoipdb=/pathtodb/GeoIPCityV2.mmdb
+```
+
+#### Windows
+
+You can crossbuild **geoip2_zabbix** for windows on linux running simply `make crossbuild`, and then add
+this UserParameter to your `zabbix-agent`.
+
+```
+UserParameter=geoip2.zabbix,PowerShell -NoProfile -ExecutionPolicy Bypass -Command " & 'C:\PathToBinary\geoip2_zabbix.exe' --path.geoipdb=C:\PathToDB\GeoIPCityV2.mmdb"
+```
+
+## Grafana Dashboard
 
 WIP
 
