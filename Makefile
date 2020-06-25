@@ -59,6 +59,7 @@ clean:
 	@echo ">> Cleaning up"
 	@find . -type f -name '*~' -exec rm -fv {} \;
 	@$(RM) $(TARGET)
+	@$(RM) $(TARGET).exe
 
 .PHONY: common-deps
 common-deps:
