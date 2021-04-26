@@ -83,4 +83,4 @@ $(GOPATH)/bin/golangci-lint lint:
 $(GOPATH)/bin/geoipupdate geoipupdate:
 	@GOOS=$(shell uname -s | tr A-Z a-z) \
 		GOARCH=$(subst x86_64,amd64,$(patsubst i%86,386,$(shell uname -m))) \
-		$(GO) get github.com/maxmind/geoipupdate/v4/cmd/geoipupdate
+		$(GO) install github.com/maxmind/geoipupdate/v4/cmd/geoipupdate@latest
