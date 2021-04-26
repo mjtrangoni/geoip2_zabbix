@@ -1,6 +1,5 @@
-# GeoIP2 Zabbix [![Build Status](https://travis-ci.org/mjtrangoni/geoip2_zabbix.svg?branch=master)](https://travis-ci.org/mjtrangoni/geoip2_zabbix)
+# GeoIP2 Zabbix ![Build Status](https://github.com/mjtrangoni/geoip2_zabbix/actions/workflows/build.yml/badge.svg?branch=master)
 
-[![GoDoc](https://godoc.org/github.com/mjtrangoni/geoip2_zabbix?status.svg?style=for-the-badge)](https://godoc.org/github.com/mjtrangoni/geoip2_zabbix)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge)](https://raw.githubusercontent.com/mjtrangoni/geoip2_zabbix/master/LICENSE)
 
 Monitoring script for getting the actual host location from
@@ -24,8 +23,7 @@ $ make
 
 ## GeoIP2 DB
 
-This program works with the commercial and the lite version of the 
-**GeoIP2-City Database**. You can choose which one to use.
+This program works with the commercial and the lite version of the **GeoIP2-City Database**. You can choose which one to use.
 
 # Templates
 
