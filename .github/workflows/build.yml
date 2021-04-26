@@ -4,7 +4,7 @@ jobs:
   build:
     strategy:
       matrix:
-        go-version: ["tip", 1.15.x, 1.16.x]
+        go-version: ["tip", 1.16.x]
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/setup-go@v2
