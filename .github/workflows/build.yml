@@ -1,0 +1,34 @@
+on: [push, pull_request]
+name: Build
+jobs:
+  build:
+    strategy:
+      matrix:
+        go-version: ["tip", 1.15.x, 1.16.x]
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/setup-go@v2
+      if: matrix.go-version != 'tip'
+      with:
+        go-version: ${{ matrix.go-version}}
+    - name: Run setup-go for tip
+      if: matrix.go-version == 'tip'
+      working-directory: ${{ github.workspace }}
+      run: |
+        git clone https://go.googlesource.com/go $HOME/gotip
+        cd $HOME/gotip/src
+        ./make.bash
+        echo "GOROOT=$HOME/gotip" >> $GITHUB_ENV
+        echo "PATH=$HOME/gotip/bin:$PATH" >> $GITHUB_ENV
+        go version
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Build
+      shell: sh
+      run: |
+        make
+    - name: Test GeoIP2
+      shell: sh
+      run: |
+        make download-geolite2-city
+        ./geoip2_zabbix --path.geoipdb=./GeoLite2-City.mmdb
