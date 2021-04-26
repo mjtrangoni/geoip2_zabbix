@@ -28,7 +28,11 @@ jobs:
       run: |
         make
     - name: Test GeoIP2
+      if: github.ref == 'refs/heads/master'
       shell: sh
+      env:
+          ACCOUNTID: ${{ secrets.ACCOUNTID }}
+          LICENSEKEY: ${{ secrets.LICENSEKEY }}
       run: |
         make download-geolite2-city
         ./geoip2_zabbix --path.geoipdb=./GeoLite2-City.mmdb
