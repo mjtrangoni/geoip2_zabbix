@@ -77,7 +77,7 @@ download-geolite2-city: geoipupdate
 $(GOPATH)/bin/golangci-lint lint:
 	@GOOS=$(shell uname -s | tr A-Z a-z) \
 		GOARCH=$(subst x86_64,amd64,$(patsubst i%86,386,$(shell uname -m))) \
-		$(GO) get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.27.0
+		$(GO) get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0
 
 .PHONY: geoipupdate
 $(GOPATH)/bin/geoipupdate geoipupdate:

@@ -7,8 +7,6 @@ linters-settings:
     min-complexity: 40
   gocognit:
     min-complexity: 60
-  maligned:
-    suggest-new: true
   dupl:
     threshold: 100
   goconst:
@@ -56,6 +54,7 @@ linters:
     - gochecknoinits
     - gochecknoglobals
     - goimports
+    - forbidigo
 
 run:
   skip-dirs:
