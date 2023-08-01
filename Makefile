@@ -42,7 +42,7 @@ vet:
 .PHONY: golangci
 golangci: $(GOLINTER)
 	@echo ">> linting code"
-	@$(GOLINTER) run --config ./.golanci.yml
+	@$(GOLINTER) run --config ./.golangci.yml
 
 .PHONY: build
 build: common-deps
@@ -77,7 +77,7 @@ download-geolite2-city: geoipupdate
 $(GOPATH)/bin/golangci-lint lint:
 	@GOOS=$(shell uname -s | tr A-Z a-z) \
 		GOARCH=$(subst x86_64,amd64,$(patsubst i%86,386,$(shell uname -m))) \
-		$(GO) get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0
+		$(GO) install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.53.3
 
 .PHONY: geoipupdate
 $(GOPATH)/bin/geoipupdate geoipupdate:
