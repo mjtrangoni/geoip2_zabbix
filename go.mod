@@ -3,7 +3,7 @@ module github.com/mjtrangoni/geoip2_zabbix
 go 1.19
 
 require (
-	github.com/glendc/go-external-ip v0.0.0-20170425150139-139229dcdddd
+	github.com/glendc/go-external-ip v0.1.0
 	github.com/oschwald/geoip2-golang v1.9.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
